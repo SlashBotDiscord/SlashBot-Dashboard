@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { APIChannel } from "discord-api-types/v10";
 import { cache } from "react";
 
-async function getChannels(guildId: string): Promise<{data: APIChannel[]}> {
+async function getChannels(guildId: string): Promise<{success: boolean, data: APIChannel[]}> {
     const session = await auth()
     const userId = (session as any)?.userId
     console.log(session, userId)

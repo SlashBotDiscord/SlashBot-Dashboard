@@ -1,6 +1,6 @@
 .navigation {
     width: 280px;
-    background-image: linear-gradient(to right, transparent 180px, var(--guild-nav-bg));
+    background-image: linear-gradient(to left, var(--guild-nav-bg) 100px, transparent);
 }
 
 .navigation ul {

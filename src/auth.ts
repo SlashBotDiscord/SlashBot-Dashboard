@@ -7,6 +7,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     })],
     callbacks: {
         async jwt({ token, account, profile }) {
+            console.log("jwt")
             if (account) {
                 token.accessToken = account.access_token
                 const result = await fetch(`${process.env["DISCORD_BASE_URL"]}/users/@me`, {headers: {authorization: `Bearer ${account.access_token}`}}).then(res => res.json())
@@ -18,7 +19,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         },
         async session({session, token}) {
             session.userId = token.userId as string
-            //@ts-ignore
+            session.user.id = token.userId as string
             session.accessToken = token.accessToken as string
             return session
         },

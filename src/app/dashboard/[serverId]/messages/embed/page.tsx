@@ -16,7 +16,9 @@ export default function Home({params}: {params: Promise<{serverId: string}>}) {
 
     useEffect(() => {
         getChannels(serverId)
-        .then(fetched => setChannels(fetched.data));
+        .then(fetched => {
+            if(fetched.success) setChannels(fetched.data)
+        });
     }, [serverId])
 
     const handleClick = useCallback(async () => {

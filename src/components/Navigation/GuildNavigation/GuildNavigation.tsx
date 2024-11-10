@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import styles from "./GuildNavigation.module.css";
-import { CommandsIcon, GeneralIcon, MessagesIcon } from "../../Icons/Icons";
+import { CommandsIcon, GeneralIcon, MemberIcon, MessagesIcon } from "../../Icons/Icons";
 
 export default function GuildNavigation() {
     const currentPath = usePathname();
@@ -37,6 +37,15 @@ export default function GuildNavigation() {
                     >
                         <CommandsIcon className={styles.icon}/>
                         <span>Commands</span>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href={`/${base}/${guildId}/user`} 
+                        className={`${styles.navLink} ${category === "user" ? styles.active : ""}`}
+                    >
+                        <MemberIcon className={styles.icon}/>
+                        <span>User Settings</span>
                     </a>
                 </li>
             </ul>

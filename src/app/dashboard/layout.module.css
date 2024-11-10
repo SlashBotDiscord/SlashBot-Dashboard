@@ -9,6 +9,7 @@
     max-width: var(--max-content-width);
     box-sizing: border-box;
     min-height: calc(100vh - 52px);
+    padding: 0 8px;
 }
 
 .innerMainContent {

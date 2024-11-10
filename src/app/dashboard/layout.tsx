@@ -1,14 +1,18 @@
 import styles from "./layout.module.css";
-import {auth, signIn} from "@/auth";
+import { auth } from "@/auth";
+import LogInButton from "@/components/Buttons/LogInButton/LogInButton";
 import DashboardHeader from "@/components/Headers/DashboardHeader/DashboardHeader";
 import GuildNavigation from "@/components/Navigation/GuildNavigation/GuildNavigation";
 
 export default async function Layout({
    children,
+   params
 }: Readonly<{
     children: React.ReactNode;
+    params: Promise<{ serverId?: string }>
 }>) {
-    const session = await auth()
+    const {serverId} = await params;
+    const session = await auth();
 
     return (
         <>
@@ -25,12 +29,7 @@ export default async function Layout({
                                 <h1>
                                     Sign in to continue
                                 </h1>
-                                <form action={async () => {
-                                    "use server"
-                                    await signIn("discord", {redirectTo: "/dashboard", redirect: true})
-                                }}>
-                                    <button type={"submit"}>Sign In</button>
-                                </form>
+                                <LogInButton/>
                             </div>
                     }
                 </div>
