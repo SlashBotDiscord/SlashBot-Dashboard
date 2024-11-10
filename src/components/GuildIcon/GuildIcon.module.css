@@ -1,0 +1,11 @@
+.guildIconSubstitute,
+.guildIcon {
+    border-radius: 50%;
+}
+
+.guildIconSubstitute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-5);
+}

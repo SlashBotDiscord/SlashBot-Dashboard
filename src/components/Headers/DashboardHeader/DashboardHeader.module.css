@@ -1,0 +1,42 @@
+.header {
+    background-color: var(--bg-color-1);
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    height: 52px;
+}
+
+.innerWrapper {
+    padding: 8px;
+    width: 100%;
+    max-width: var(--max-content-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.brand a {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.brand img {
+    border-radius: 50%;
+}
+
+@media(max-width: 700px) {
+    .brand a {
+        display: none;
+    }
+}

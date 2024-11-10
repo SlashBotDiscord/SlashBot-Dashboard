@@ -1,0 +1,52 @@
+.navigation {
+    width: 280px;
+    background-image: linear-gradient(to right, transparent 180px, var(--guild-nav-bg));
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin-right: .4rem;
+}
+
+.navigation li {
+    margin: 8px 0;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    backdrop-filter: var(--frosted-glass-filter);
+}
+
+.navLink:hover {
+    background-color: var(--frosted-glass-bg-2);
+}
+
+.navLink:hover .icon {
+    color: #FFFFFF;  /* White stroke on hover */
+}
+
+.navLink.active .icon {
+    color: #FFFFFF;  /* White stroke for active state */
+}
+
+.navLink.active {
+    background-color: var(--frosted-glass-bg);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #99AAB5;  /* Light grey stroke for the SVG */
+    stroke: #99AAB5;  /* Light grey stroke for the SVG */
+}
+
+/* Keep text color separate from icon color */
+.navLink span {
+    color: #FFFFFF;  /* Text stays white */
+}

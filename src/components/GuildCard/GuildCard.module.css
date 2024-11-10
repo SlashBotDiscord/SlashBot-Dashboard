@@ -1,0 +1,26 @@
+.card {
+    background-color: var(--frosted-glass-bg);
+    backdrop-filter: var(--frosted-glass-filter);
+    box-shadow: var(--box-shadow-subtle);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    padding: 8px;
+    width: 250px;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.guildInformation {
+    padding-left: 8px;
+}
+
+.guildInformation span:first-child {
+    font-weight: 400;
+    font-size: 105%;
+}

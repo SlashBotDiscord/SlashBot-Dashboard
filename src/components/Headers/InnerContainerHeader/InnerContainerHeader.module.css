@@ -1,0 +1,52 @@
+.innerContentHeader {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.innerContentHeader > div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.mainCategory {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.mainCategory:hover {
+    color: white;
+}
+
+.mainIconWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.mainIconWrapper > svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    stroke: white;
+}
+
+.subSection {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    padding-top: .2rem;
+}
+
+.arrowIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.subSection a {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.subSection a {
+    color: inherit;
+}

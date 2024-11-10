@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--frosted-glass-bg);
+    backdrop-filter: var(--frosted-glass-filter);
+    border-radius: var(--border-radius);
+    padding: 1rem 1rem;
+    color: inherit;
+}
+
+.main:hover {
+    color: inherit;
+    background-color: var(--frosted-glass-bg);
+}
+
+.iconWrapper,
+.iconWrapper > svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
