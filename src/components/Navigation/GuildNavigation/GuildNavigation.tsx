@@ -1,13 +1,18 @@
 "use client";
 import { usePathname } from "next/navigation";
 import styles from "./GuildNavigation.module.css";
-import { CommandsIcon, GeneralIcon, MemberIcon, MessagesIcon } from "../../Icons/Icons";
+import { ButtonRoleIcon, CommandsIcon, GeneralIcon, MemberIcon, MessagesIcon } from "../../Icons/Icons";
 
-export default function GuildNavigation() {
+export default function GuildNavigation({memberPermissions}: {memberPermissions: string}) {
     const currentPath = usePathname();
     const [_, base, guildId, category] = currentPath.split("/");
 
     if(!guildId) return null;
+    
+    const bitfield = BigInt(memberPermissions);
+    if((bitfield & BigInt(1) << BigInt(5)) === BigInt(0)) {
+        return null;
+    }
 
     return (
         <nav className={styles.navigation}>
@@ -19,6 +24,15 @@ export default function GuildNavigation() {
                     >
                         <GeneralIcon className={styles.icon}/>
                         <span>General</span>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href={`/${base}/${guildId}/buttonroles`} 
+                        className={`${styles.navLink} ${category === "buttonroles" ? styles.active : ""}`}
+                    >
+                        <ButtonRoleIcon className={styles.icon}/>
+                        <span>ButtonRoles</span>
                     </a>
                 </li>
                 <li>

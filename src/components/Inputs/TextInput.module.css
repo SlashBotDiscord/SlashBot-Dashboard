@@ -1,0 +1,67 @@
+.inputContainer {
+    position: relative;
+    max-width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 20px 10px 12px;
+    background: var(--bg-color-1);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 20px;
+    transition: border-color 0.2s ease;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input::placeholder {
+    color: var(--container-accent-1);
+}
+
+.input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.clearButton {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: var(--container-accent-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    box-shadow: none;
+}
+
+.clearButton:hover {
+    color: var(--text-color);
+}
+
+.clearButton:disabled {
+    display: none;
+}
+
+.error {
+    border-color: #ed4245;
+}
+
+.errorMessage {
+    color: #ed4245;
+    font-size: 12px;
+    margin-top: 4px;
+}

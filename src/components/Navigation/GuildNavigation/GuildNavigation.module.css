@@ -50,3 +50,9 @@
 .navLink span {
     color: #FFFFFF;  /* Text stays white */
 }
+
+@media(max-width: 600px) {
+    .navigation {
+        display: none;
+    }
+}

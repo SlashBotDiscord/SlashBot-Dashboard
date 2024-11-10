@@ -11,8 +11,6 @@ export default function GuildSelector({ guilds }: { guilds: PartialGuild[] }) {
     const [expanded, setExpanded] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    console.log(guilds)
-
     const currentGuildId = pathName.split("/")[2];
     const currentGuild = guilds.find(g => g.id === currentGuildId);
 
