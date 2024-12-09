@@ -14,6 +14,8 @@ export default async function Layout({
     const member = await getMember(serverId);
 
     if(!member || !member.success) {
+        console.log(member)
+        console.log("User does not have permission to view this page.");
         return (
             <div>
                 <h1>
@@ -26,6 +28,7 @@ export default async function Layout({
 
     const bitfield = BigInt(member.data.permissions);
     if((bitfield & BigInt(1) << BigInt(5)) === BigInt(0)) {
+        console.log("User does not have permission to view this page.");
         return (
             <div>
                 <h1>
